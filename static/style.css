@@ -1,116 +1,114 @@
-* { box-sizing: border-box; }
-
-:root {
-  --bg1: #ffafbd;
-  --bg2: #ffc3a0;
-  --card-bg: rgba(255, 255, 255, 0.15);
-  --text: #fff;
-  --accent: #ff4081;
-  --accent-dark: #f50057;
-}
-
-body, html {
-  margin: 0; padding: 0; height: 100%;
-  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
-  color: var(--text);
-}
-
-.bg {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--bg1), var(--bg2));
-  background-attachment: fixed;
-}
-
-.card {
-  width: min(920px, 92vw);
-  padding: 28px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  background: var(--card-bg);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   text-align: center;
 }
 
-h1 {
-  margin: 10px 0 6px;
-  font-size: clamp(28px, 5vw, 44px);
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+/* 🎈 Balloons Animation */
+.balloons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: -1;
+}
+.balloon {
+  width: 60px;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-80px); }
+  100% { transform: translateY(0); }
 }
 
-.subtitle {
-  margin: 0 0 18px;
-  opacity: 0.95;
+/* Form Page */
+.form-page {
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.form {
-  display: grid;
-  gap: 12px;
-  margin-top: 10px;
-  place-items: center;
+.form-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
-
-input {
-  width: min(420px, 90%);
-  padding: 12px 14px;
-  border-radius: 12px;
+.cartoon img {
+  width: 150px;
+}
+.input-form {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.input-form h1 {
+  margin-bottom: 20px;
+}
+.input-form input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #f77;
+  width: 200px;
+}
+.input-form button {
+  background: #ff4d6d;
+  color: white;
   border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-button, .btn-secondary {
-  margin-top: 6px;
-  padding: 12px 18px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+  font-size: 16px;
+}
+.input-form button:hover {
+  background: #ff1e4d;
 }
 
-button {
-  background: var(--accent);
-  color: #fff;
+/* Birthday Page */
+.birthday-page {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.wish-list p {
+  font-size: 24px;
+  margin: 5px 0;
+  animation: pop 1s ease-in-out infinite alternate;
+}
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
 
-button:hover {
-  background: var(--accent-dark);
+/* Dancing Cartoons */
+.characters {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
-
-.btn-secondary {
-  background: rgba(255,255,255,0.2);
-  color: #fff;
+.characters img {
+  width: 150px;
 }
-
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.3);
+.dance {
+  animation: dance 1s infinite alternate;
 }
-
-.messages {
-  margin: 18px auto 10px;
-  max-height: 50vh;
-  overflow: auto;
-  background: rgba(0,0,0,0.15);
-  border-radius: 12px;
-  padding: 12px;
-  width: min(720px, 95%);
-}
-
-.messages p {
-  margin: 6px 0;
-  font-size: clamp(16px, 2.5vw, 20px);
-}
-
-.highlight {
-  color: #fffde7;
-  text-decoration: underline wavy #fffde7;
-}
-
-.hint {
-  opacity: 0.9;
-  font-size: 14px;
-  margin-top: 10px;
+@keyframes dance {
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(10deg); }
 }
