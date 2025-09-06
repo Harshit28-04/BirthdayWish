@@ -1,0 +1,3 @@
+<img src="{{ url_for('static', filename='images/kids.png') }}" alt="Kids">
+<img src="{{ url_for('static', filename='images/balloons.jpg') }}" alt="Balloons">
+<img src="{{ url_for('static', filename='images/bear.jpg') }}" alt="Bear">
