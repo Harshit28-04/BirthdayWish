@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎉 Happy Birthday {{ name }} 🎉</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script defer src="{{ url_for('static', filename='balloons.js') }}"></script>
+</head>
+<body class="bg">
+  <div class="card">
+    <h1>🎉 Happy Birthday, <span class="highlight">{{ name }}</span>! 🎂</h1>
+    <p class="subtitle">Wishing you joy, love, and lots of cake! 🍰</p>
+
+    <div class="messages">
+      {% for i in range(age) %}
+        <p>🥳 Happy Birthday {{ name }}! 🎂</p>
+      {% endfor %}
+    </div>
+
+    <div class="actions">
+      <a href="{{ url_for('home') }}" class="btn-secondary">Make another greeting</a>
+    </div>
+  </div>
+</body>
+</html>
