@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 Happy Birthday {{ name }} 🎉</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='balloons.js') }}"></script>
 </head>
-<body class="birthday-page">
-  <div class="fireworks"></div>
-  <h1>🎉 Happy Birthday, {{ name }}! 🎉</h1>
+<body class="birthday-bg">
+  <!-- Floating balloons -->
+  <img src="{{ url_for('static', filename='balloons.png') }}" alt="Balloons" class="balloons-img">
 
-  <div class="wish-list">
-    {% for i in range(age) %}
-      <p>🎂 Happy Birthday {{ name }} 🎂</p>
-    {% endfor %}
-  </div>
+  <!-- Cute Teddy in center -->
+  <img src="{{ url_for('static', filename='teddy.png') }}" alt="Birthday Teddy" class="teddy-img">
 
-  <div class="characters">
-    <img src="https://i.postimg.cc/PrM0ZLgm/boy.png" class="dance" alt="Boy Cartoon">
-    <img src="https://i.postimg.cc/8cz3DgYK/girl.png" class="dance" alt="Girl Cartoon">
+  <div class="greeting-card">
+    <h1>🎉 Happy Birthday, {{ name }}! 🎉</h1>
+    <p class="age-text">🎂 Turning {{ age }} is just magical! ✨</p>
+    <p class="wish">May your day be filled with love, laughter, and endless joy 🥳</p>
   </div>
 </body>
 </html>
