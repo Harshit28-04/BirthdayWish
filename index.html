@@ -6,19 +6,23 @@
   <title>🎂 Birthday Input</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg">
-  <div class="card">
+<body class="form-page">
+  <!-- Floating Balloons -->
+  <img src="{{ url_for('static', filename='image/balloons.jpg') }}" alt="Balloons" class="balloons-img">
+
+  <!-- Kids cartoon bottom left -->
+  <img src="{{ url_for('static', filename='image/kids.png') }}" alt="Kids with balloons" class="kids-img">
+
+  <div class="input-form">
     <h1>🎂 Enter Details 🎂</h1>
     <p class="subtitle">Fill this and get a surprise greeting page ✨</p>
-    
-    <!-- ✅ Fixed: action="/" added -->
-    <form action="/" method="POST" class="form">
+
+    <!-- ✅ Corrected action -->
+    <form method="POST" action="{{ url_for('home') }}">
       <input type="text" name="name" placeholder="What's your name?" required />
       <input type="number" name="age" placeholder="Enter your age" min="1" max="120" required />
       <button type="submit">Celebrate 🎉</button>
     </form>
-
-    <p class="hint">Tip: Share the link after you run it online to surprise didi!</p>
   </div>
 </body>
 </html>
